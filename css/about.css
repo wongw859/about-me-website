@@ -1,0 +1,149 @@
+    * {
+        /* padding does not have effect on width */
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    header {
+        width: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+    }
+    
+    body {
+        overflow-x: hidden;
+    }
+    
+    .logo_about {
+        margin-left: 2rem;
+    }
+    
+    .logo_about a {
+        font-family: 'Lato', sans-serif;
+        font-size: 1.6rem;
+        color: #eee;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        outline: 2px solid #eee;
+        padding: 1rem 2rem;
+    }
+    
+    .logo_about a:hover {
+        color: crimson;
+    }
+    /* navbar */
+    
+    .navbar-dark .navbar-nav .active>.nav-link,
+    .navbar-dark .navbar-nav .nav-link,
+    .navbar-dark .navbar-nav .nav-link {
+        font-family: 'lato', sans-serif;
+        font-size: 2rem;
+        padding-left: 3rem;
+        letter-spacing: 1px;
+    }
+    
+    .navbar-dark .navbar-nav .active>.nav-link:hover,
+    .navbar-dark .navbar-nav .nav-link:hover,
+    .navbar-dark .navbar-nav .nav-link:hover {
+        border-bottom: 5px solid crimson;
+    }
+    
+    @media screen and (max-width: 760px) {
+        .nav-list {
+            width: 30rem;
+        }
+        .main-heading {
+            font-size: 4rem;
+        }
+        .sub-heading {
+            font-size: 1.2rem;
+        }
+    }
+    
+    @media screen and (max-width: 550px) {
+        .main-heading {
+            font-size: 2.5rem;
+        }
+        .sub-heading {
+            font-size: 1rem;
+        }
+        .cta-btn {
+            margin-top: 3rem;
+        }
+    }
+    /* parallex */
+    
+    .parallex {
+        background: linear-gradient( rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('../assets/images/parallex1.jpg') no-repeat center;
+        background-size: cover;
+        background-attachment: fixed;
+        height: 100vh;
+    }
+    /* About me */
+    
+    a {
+        color: #333;
+        text-decoration: none;
+    }
+    
+    #myContainer {
+        max-width: 60rem;
+        margin: auto;
+        margin-bottom: 5rem;
+        overflow: auto;
+        padding: 0;
+        position: relative;
+        top: 50vh;
+    }
+    
+    .main-header {
+        height: 80vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+    }
+    
+    .main-header h1 {
+        font-family: 'Lato', sans-serif;
+        letter-spacing: 0.5rem;
+        font-size: 6rem;
+        margin-bottom: 2rem;
+        line-height: 1.2;
+        color: white;
+    }
+    
+    .main-header h2 {
+        color: white;
+        font-family: 'Lato', sans-serif;
+        letter-spacing: 0.3rem;
+    }
+    
+    .main-header p {
+        font-size: 2rem;
+    }
+    /* text */
+    
+    #moi {
+        font-family: 'Poppins', sans-serif;
+        text-transform: uppercase;
+        text-align: center;
+        font-size: 35px;
+        color: #1F2C38;
+        border-bottom: solid 2px #FDB660;
+        padding: 2% 0;
+    }
+    
+    #text_about p {
+        color: black;
+        font-family: 'Lato', sans-serif;
+        text-align: justify;
+        font-size: 2rem;
+        margin: 5% 0;
+    }

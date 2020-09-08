@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/photo_style.css">
+    <link rel="stylesheet" href="./css/index.css">
+    <!-- ggl fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato&display=swap" rel="stylesheet">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- animate css -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css" />
+    <title>Winnie | Photos</title>
+</head>
+
+<body>
+    <header>
+        <nav class="main-nav">
+            <div class="logo_photo">
+                <a href="index.html">Winnie</a>
+            </div>
+            <div class="hamburger-menu">
+                <span class="bar"></span>
+            </div>
+            <ul class="nav-list">
+                <li class="nav-item">
+                    <a href="index.html" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="about.html" class="nav-link">About me</a>
+                </li>
+                <li class="nav-item">
+                    <a href="photo.html" class="nav-link">Photo gallery</a>
+                </li>
+            </ul>
+        </nav>
+
+        <!-- photo gallery -->
+
+        <div class="container" id="photoContainer">
+            <h1 class="text-center" id="gallery">A glimpse into my life</h1>
+            <div class="row text-center text-lg-left ">
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <img src="assets/images/image1.JPG" alt="" class="img-fluid img-thumbnail" onclick="openModal();currentSlide(1)">
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <img src="assets/images/image2.JPG" alt="" class="img-fluid img-thumbnail" onclick="openModal();currentSlide(2)">
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <img src="assets/images/image3.JPG" alt="" class="img-fluid img-thumbnail" onclick="openModal();currentSlide(3)">
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <img src="assets/images/image4.JPG" alt="" class="img-fluid img-thumbnail" onclick="openModal();currentSlide(4)">
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <img src="assets/images/image5.JPG" alt="" class="img-fluid img-thumbnail" onclick="openModal();currentSlide(5)">
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <div class="row">
+                        <img src="assets/images/image6.JPG" alt="" class="img-fluid img-thumbnail" onclick="openModal();currentSlide(6)">
+                        <img src="assets/images/image9.JPG" alt="" class="img-fluid img-thumbnail" onclick="openModal();currentSlide(7)">
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <img src="assets/images/image7.JPG" alt="" class="img-fluid img-thumbnail" onclick="openModal();currentSlide(8)">
+                </div>
+                <div class="col-lg-3 col-md-4 col-xs-6">
+                    <div class="row">
+                        <img src="assets/images/image8.JPG" alt="" class="img-fluid img-thumbnail" onclick="openModal();currentSlide(9)">
+                        <img src="assets/images/image10.JPG" alt="" class="img-fluid img-thumbnail" onclick="openModal();currentSlide(10)">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- modal for full screen -->
+        <div id="my-modal" class="modal">
+            <!-- close button -->
+            <span class="close" onclick="closeModal()">&times;</span>
+
+            <!-- content for modal -->
+            <div class="modal-content">
+
+                <!-- images for modals -->
+                <!-- class portrait-image & landscape image is used to resize image so that there is no scroll bars -->
+                <div class="my-slides">
+                    <div class="numbertext">1/10</div>
+                    <img src="assets/images/image1.JPG" class="landscape-image" alt="">
+                </div>
+                <div class="my-slides">
+                    <div class="numbertext">2/10</div>
+                    <img src="assets/images/image2.JPG" class="landscape-image" alt="">
+                </div>
+                <div class="my-slides">
+                    <div class="numbertext">3/10</div>
+                    <img src="assets/images/image3.JPG" class="landscape-image" alt="">
+                </div>
+                <div class="my-slides">
+                    <div class="numbertext">4/10</div>
+                    <img src="assets/images/image4.JPG" class="landscape-image" alt="">
+                </div>
+                <div class="my-slides">
+                    <div class="numbertext">5/10</div>
+                    <img src="assets/images/image5.JPG" class="portrait-image" alt="">
+                </div>
+                <div class="my-slides">
+                    <div class="numbertext">6/10</div>
+                    <img src="assets/images/image6.JPG" class="landscape-image" alt="">
+                </div>
+                <div class="my-slides">
+                    <div class="numbertext">7/10</div>
+                    <img src="assets/images/image9.JPG" class="landscape-image" alt="">
+                </div>
+                <div class="my-slides">
+                    <div class="numbertext">8/10</div>
+                    <img src="assets/images/image7.JPG" class="portrait-image" alt="">
+                </div>
+                <div class="my-slides">
+                    <div class="numbertext">9/10</div>
+                    <img src="assets/images/image8.JPG" class="landscape-image" alt="">
+                </div>
+                <div class="my-slides">
+                    <div class="numbertext">10/10</div>
+                    <img src="assets/images/image10.JPG" class="landscape-image" alt="">
+                </div>
+
+                <!-- Next and previous button -->
+                <!-- negative changeSlides number is navigating to previous -->
+                <a class="prev" onclick="changeSlides(-1)">&#10094;</a>
+                <a class="next" onclick="changeSlides(1)">&#10095;</a>
+            </div>
+        </div>
+
+
+        <!-- gsap animation -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+        <script src="./javascript/photo.js"></script>
+        <!-- jQuery / Popper-->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js" integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg==" crossorigin="anonymous"></script>
+        <!-- smooth scroll -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/smooth-scroll/16.1.3/smooth-scroll.min.js" integrity="sha512-HYG9E+RmbXS7oy529Nk8byKFw5jqM3R1zzvoV2JnltsIGkK/AhZSzciYCNxDMOXEbYO9w6MJ6SpuYgm5PJPpeQ==" crossorigin="anonymous"></script>"></script>
+        <!-- wow js -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin=" anonymous "></script>"></script>
+    </header>
+</body>
+
+</html>

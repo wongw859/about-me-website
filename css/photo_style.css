@@ -1,0 +1,325 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    overflow-x: hidden;
+}
+
+.logo_photo {
+    margin-left: 2rem;
+}
+
+.logo_photo a {
+    font-family: 'Lato', sans-serif;
+    font-size: 1.6rem;
+    color: #333;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: 2px solid #eee;
+    padding: 1rem 2rem;
+}
+
+.hamburger-menu {
+    height: 5rem;
+    width: 5rem;
+    background-color: #eee;
+    border-radius: 0.4rem;
+    box-shadow: .5rem .5rem 1rem #cacaca;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.hamburger-menu:hover {
+    box-shadow: inset .5rem .5rem 1rem #cacaca, inset -.5rem -5rem 1rem #fff;
+}
+
+.bar {
+    width: 3rem;
+    height: 2px;
+    background-color: #333;
+    display: inline-block;
+    position: relative;
+    transition: background-color .5s;
+}
+
+.bar::before,
+.bar::after {
+    content: "";
+    position: absolute;
+    width: inherit;
+    /*purpose:inherit to get 3 rem width and 2px height of .bar*/
+    height: inherit;
+    background-color: #333;
+    transition: all .5s;
+    /*note: this is key to hamburger animation*/
+}
+
+.bar::before {
+    top: -.8rem;
+}
+
+.bar::after {
+    top: .8rem;
+}
+
+
+/* transforming hamburger btn to X */
+
+
+/* bar in middle need to disappear, so set to transparent */
+
+.open .bar {
+    background-color: transparent;
+}
+
+.open .bar::before {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.open .bar::after {
+    top: 0;
+    transform: rotate(-135deg);
+}
+
+.nav-list {
+    width: 50rem;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #eee;
+    transform: translateX(55rem);
+    /*a lil bigger than width of nav-list to hide it , but we can still see it by scrolling ,tackle scrolling by setting overflowX iof body to hidden to hide the scroll bar*/
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: -.5rem 0 1rem rgba(0, 0, 0, .1);
+    z-index: 1500;
+    transition: transform .5s;
+}
+
+.open .nav-list {
+    transform: translateX(0);
+}
+
+.nav-item {
+    list-style: none;
+    border-bottom: 2px solid crimson;
+}
+
+.nav-link {
+    text-decoration: none;
+    display: block;
+    /*setting to block because we need to apply paddings and margins*/
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: .5rem;
+    transition: color .5s;
+}
+
+.nav-link:hover {
+    color: crimson;
+}
+
+@media screen and (max-width: 1400px) {
+    .hero-clipped {
+        width: 100%;
+        height: 75vh;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
+    }
+    .logo a {
+        color: #333;
+        outline-color: #333;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .nav-list {
+        width: 30rem;
+    }
+    .main-heading {
+        font-size: 4rem;
+    }
+    .sub-heading {
+        font-size: 1.2rem;
+    }
+    .cta-btn {
+        padding: 1rem 2.5rem;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .main-heading {
+        font-size: 2.5rem;
+    }
+    .sub-heading {
+        font-size: 1rem;
+    }
+    .cta-btn {
+        margin-top: 3rem;
+    }
+}
+
+
+/* photo gallery */
+
+#photoContainer {
+    padding-bottom: 10rem;
+}
+
+#gallery {
+    font-family: 'Lato', sans-serif;
+    font-size: 4rem;
+    font-weight: 900;
+    letter-spacing: 0.8rem;
+    margin: 4rem;
+    position: relative;
+}
+
+#gallery::after {
+    content: 'A glimpse into my life';
+    color: #EFDE74;
+    position: absolute;
+    z-index: -1;
+    top: 1rem;
+    left: -0.1rem;
+    right: 2rem;
+    letter-spacing: 0.8rem;
+}
+
+
+/* photo gallery - modal */
+
+.modal {
+    /* display: none; */
+    /*no display until being clicked*/
+    /* position: fixed; */
+    /* -->already in scss z-index: 1; */
+    padding-top: 5px 0;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal-content {
+    position: relative;
+    margin: auto;
+    padding: 0;
+    width: 85%;
+    max-width: 1200px;
+    border: none;
+    background-color: transparent;
+    align-items: center;
+}
+
+.my-slides {
+    text-align: center;
+    justify-content: center;
+}
+
+
+/* adjust image size */
+
+.portrait-image {
+    height: 90vh;
+    margin-bottom: 1.5rem;
+}
+
+.landscape-image {
+    height: 90vh;
+    margin-bottom: 1.5rem;
+}
+
+
+/* close btn */
+
+.close {
+    color: #fff;
+    position: absolute;
+    top: 1rem;
+    right: 1.5rem;
+    font-size: 10rem;
+    font-weight: bold;
+    transition: 0.3s ease;
+}
+
+.close:hover,
+close:focus {
+    color: #FFF;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+/* next and prev btn */
+
+.prev,
+.next {
+    font-size: 7rem;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 1rem;
+    margin-top: -3rem;
+    color: grey !important;
+    transition: 0.6s ease;
+    border-radius: 0 0.3rem 0.3rem 0;
+    /* user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none; */
+}
+
+
+/* next btn */
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev {
+    left: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+
+/* hovering for pre  and next btn */
+
+.next:hover,
+.prev:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+
+/* numbertext */
+
+.numbertext {
+    color: black;
+    font-size: 5rem;
+    font-family: "Lato", sans-serif;
+    padding: 0.5rem 3rem;
+    position: absolute;
+    top: 0;
+    left: 0.8rem;
+}
